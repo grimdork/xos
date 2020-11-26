@@ -3,7 +3,7 @@ package xos_test
 import (
 	"testing"
 
-	"github.com/grimdork/cred/xos"
+	"github.com/grimdork/xos"
 )
 
 func TestAppPaths(t *testing.T) {
