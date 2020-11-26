@@ -6,5 +6,9 @@ import "os"
 // The second return value is true if it's a directory.
 func Exists(path string) (bool, bool) {
 	stat, err := os.Stat(path)
-	return err == nil, stat.IsDir()
+	if err != nil {
+		return false, false
+	}
+
+	return true, stat.IsDir()
 }
