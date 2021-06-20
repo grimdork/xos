@@ -25,7 +25,7 @@ func baseServerPath() (string, error) {
 func (cp *ConfigPath) Path() string {
 	if cp.dirty {
 		cp.Reset()
-		dir := cp.WriteString(filepath.Join(cp.base, "."+strings.ToLower(cp.name)))
+		cp.WriteString(filepath.Join(cp.base, "."+strings.ToLower(cp.name)))
 		cp.dirty = false
 	}
 
