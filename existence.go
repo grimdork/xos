@@ -12,3 +12,23 @@ func Exists(path string) (bool, bool) {
 
 	return true, stat.IsDir()
 }
+
+// DirExists checks for the existence of a directory.
+func DirExists(path string) bool {
+	stat, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+
+	return stat.IsDir()
+}
+
+// FileExists checks for the existence of a file.
+func FileExists(path string) bool {
+	stat, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+
+	return !stat.IsDir()
+}
